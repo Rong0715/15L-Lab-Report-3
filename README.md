@@ -28,6 +28,8 @@ Beatniks, Hippies, and Modern Times
 ```
 **Example 1 Comment:** This option prompts an output to show all lines in the file `California-History.txt` that doesn't contain the keyword `"the"`. It's useful when we wanna find lines that don't contain a certain keyword.
 
+**Example 1 Citation:** https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html
+
 **Example 2 Input:**
 ```
 grep -v "^[[:space:]]*$" written_2/travel_guides/berlitz2/California-History.txt
@@ -43,6 +45,8 @@ Recent earthquakes — one in San Francisco in 1989 and another that hit Los Ang
 ```
 **Example 2 Comment:** This option prompts an output to show all lines in the file `California-History.txt` except empty ones. It's useful when we want to skip all empty lines in a file.
 
+**Example 2 Citation:** https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html
+
 ---
 
 ### For `-r`:
@@ -57,6 +61,8 @@ written_2/travel_guides//berlitz2/Bahamas-WhereToGo.txt:Nassau town has a fine p
 ```
 **Example 1 Comment:** This option prompts an output to find all documents in the target directory `travel_guides` and its subdirectories that contain the keyword `"modernity and history found anywhere in the world"`. It's helpful when we wanna find all the files containing a certain keyword in a directory and its subdirectories.
 
+**Example 1 Citation:** https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html
+
 **Example 2 Input:**
 ```
 grep -r "public money was invested to dredge the port" --include="*.txt" written_2/travel_guides/
@@ -66,6 +72,8 @@ grep -r "public money was invested to dredge the port" --include="*.txt" written
 written_2/travel_guides//berlitz2/Bahamas-WhereToGo.txt:Nassau town has a fine pedigree dating back through colonial times, and the compact town center still has the feel of life under the English. Out in the natural harbor, which offered shelter to many a pirate ship, is a major port that can accommodate 15 large cruise ships at one time. This capacity was created in 1965 when public money was invested to dredge the port, specifically to allow bigger ships to enter. The huge vessels, hundreds of feet high, dwarf the towns buildings, which regulations set at a maximum of three stories, and create one of the most effective juxtapositions of modernity and history found anywhere in the world. The cruise port at Prince George Wharf brings in by far the majority of visitors to the Bahamas.
 ```
 **Example 2 Comment:** This option prompts an output to find all documents which has extension `".txt"` in the target directory `travel_guides` and its subdirectories that contain the keyword `"modernity and history found anywhere in the world"`. It's helpful when we wanna find all the `.txt` files containing a certain keyword in a directory and its subdirectories.
+
+**Example 2 Citation:** https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html
 
 ---
 
@@ -81,6 +89,8 @@ Nassau town has a fine pedigree dating back through colonial times, and the comp
 ```
 **Example 1 Comment:** This option prompts an output to find the line in the target file `Bahamas-WhereToGo.txt` that contains the keyword `"mONey WAs"` regardless of whether it's capitalized. It's useful when we wanna do case-insensitively searching.
 
+**Example 1 Citation:** https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html
+
 **Example 2 Input:**
 ```
 grep -i -w "mONe" written_2/travel_guides/berlitz2/Bahamas-WhereToGo.txt
@@ -90,3 +100,52 @@ grep -i -w "mONe" written_2/travel_guides/berlitz2/Bahamas-WhereToGo.txt
 // NO OUTPUT
 ```
 **Example 2 Comment:** This option prompts an output to find the line in the target file `Bahamas-WhereToGo.txt` that contains the keyword `"mONe"` as an independent word. In this case, no output is shown because there's no line in the file containing `"mONe"` as an independent word. It's useful when we wanna find lines that contain the keywords that entirely match our input argument.
+
+**Example 2 Citation:** https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html
+
+---
+
+### For `-c`:
+
+**Example 1 Input:**
+```
+grep -c "Bahama" written_2/travel_guides/berlitz2/Bahamas-WhereToGo.txt
+```
+**Example 1 Output:**
+```
+43
+```
+**Example 1 Comment:** This option prompts an output of the number of lines that contains the keyword `"Bahama"` in the file `Bahamas-WhereToGo.txt`. It's useful when we wanna know how many lines in a file contain a certain keyword.
+
+**Example 1 Citation:** https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html
+
+**Example 2 Input:**
+```
+grep -c -r "Bahama" written_2/travel_guides/berlitz2/
+```
+**Example 2 Output:**
+```
+written_2/travel_guides/berlitz2//Portugal-History.txt:0
+written_2/travel_guides/berlitz2//Berlin-WhereToGo.txt:0
+written_2/travel_guides/berlitz2//Costa-History.txt:0
+written_2/travel_guides/berlitz2//Amsterdam-WhereToGo.txt:0
+```
+...
+```
+written_2/travel_guides/berlitz2//Cuba-WhatToDo.txt:0
+written_2/travel_guides/berlitz2//Berlin-History.txt:0
+written_2/travel_guides/berlitz2//Bahamas-WhereToGo.txt:43
+```
+...
+```
+written_2/travel_guides/berlitz2//Bahamas-Intro.txt:12
+written_2/travel_guides/berlitz2//Amsterdam-History.txt:0
+written_2/travel_guides/berlitz2//Bahamas-WhatToDo.txt:20
+```
+...
+
+**Example 2 Comment:** This option prompts an output to find the numbers of lines that contain the keyword `"Bahama"` for all the files in the directory `berlitz2` and its subdirectory. It's helpful when we wanna find how many lines contain the keyword in all files in one directory and its subdirectories.
+
+**Example 2 Citation:** https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html
+
+---
